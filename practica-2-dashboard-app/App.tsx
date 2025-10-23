@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { StatusBar } from 'expo-status-bar'
+import { TabNavigator } from './src/navigation/TabNavigator'
+
+/**
+ * App - Punto de entrada de la aplicación
+ *
+ * ¿Qué hace?
+ * Envuelve la app en NavigationContainer y renderiza TabNavigator
+ *
+ * ¿Cómo?
+ * - NavigationContainer: contexto global de navegación
+ * - TabNavigator: navegación principal con tabs
+ * - StatusBar: configuración de la barra de estado
+ */
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <NavigationContainer>
+      <TabNavigator />
+      <StatusBar style="light" />
+    </NavigationContainer>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
