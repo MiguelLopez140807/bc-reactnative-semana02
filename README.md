@@ -1,193 +1,284 @@
-# 💻 Semana 2: Navegación en React Native
+# � Práctica 3: Settings App con Drawer Navigator
 
-Ejercicios prácticos guiados para dominar los 3 tipos de navegación fundamentales en React Native.
+Aplicación de configuración usando **Drawer Navigator** con custom drawer content, navegación anidada y diseño profesional.
 
-## 📋 Índice de Prácticas
+## 🎯 Objetivos de Aprendizaje
 
-| # | Práctica | Navigator | Duración | Dificultad | Estado |
-|---|----------|-----------|----------|------------|---------|
-| 1 | Blog App | Stack Navigator | 45 min | ⭐⭐ | 📝 Pendiente |
-| 2 | Dashboard App | Tab Navigator | 45 min | ⭐⭐ | 📝 Pendiente |
-| 3 | Settings App | Drawer Navigator | 30 min | ⭐⭐⭐ | 📝 Pendiente |
+Al completar esta práctica, dominarás:
 
-**Tiempo Total:** ~2 horas
+- ✅ **Drawer Navigator** básico y configuración
+- ✅ **Custom Drawer Content** con perfil de usuario
+- ✅ **Navegación Anidada** (Stack dentro de Drawer)
+- ✅ **Iconos con Ionicons** de Expo Vector Icons
+- ✅ **TypeScript** para navegación tipada
+- ✅ **Funcionalidad de Logout** con confirmación
+- ✅ **Pantallas de configuración** profesionales
 
-## 🎯 Objetivos Generales
+## � Características Implementadas
 
-Al completar las 3 prácticas, serás capaz de:
+### 🎨 Interfaz de Usuario:
+- **Custom Drawer** con foto de perfil y datos del usuario
+- **4 Pantallas Principales:** Home, Settings, About, Help
+- **Navegación Stack** anidada para detalles
+- **Iconos Ionicons** para cada sección
+- **Diseño Profesional** con StyleSheet
 
-- ✅ Implementar **Stack Navigator** para flujos lineales
-- ✅ Crear **Tab Navigator** con pestañas inferiores  
-- ✅ Configurar **Drawer Navigator** con menú lateral
-- ✅ Anidar navegadores (Stack dentro de Tab, Stack dentro de Drawer)
-- ✅ Personalizar íconos, estilos y comportamientos
-- ✅ Manejar navegación tipada con **TypeScript**
-- ✅ Pasar parámetros entre pantallas
-- ✅ Crear custom drawer content
+### ⚡ Funcionalidades:
+- **Dashboard Principal** con tarjetas interactivas
+- **Configuración Avanzada** con switches y opciones
+- **Información de la App** con detalles técnicos
+- **Centro de Ayuda** con preguntas frecuentes
+- **Logout con Confirmación** usando Alert
 
-## 📚 Requisitos Previos
+### 🔧 Configuración Técnica:
+- **React Navigation v6** con tipos TypeScript
+- **Drawer Navigator** con custom content
+- **Stack Navigator** anidado
+- **Expo Vector Icons** para iconografía
+- **Gestión de Estado** con useState
 
-### Conocimientos:
-- ✅ React Native básico
-- ✅ Componentes funcionales y hooks
-- ✅ TypeScript básico (recomendado)
-- ✅ Teoría de React Navigation
-
-### Dependencias a Instalar:
-```bash
-# React Navigation y navegadores principales
-npm install @react-navigation/native
-npm install @react-navigation/native-stack
-npm install @react-navigation/bottom-tabs
-npm install @react-navigation/drawer
-
-# Dependencias de Expo
-npm install react-native-screens react-native-safe-area-context
-
-# Para Drawer (práctica 3)
-npm install react-native-gesture-handler react-native-reanimated
-
-# Íconos
-npm install @expo/vector-icons
-
-# Styling (NativeWind - opcional)
-npm install nativewind
-npm install --save-dev tailwindcss
-```
-
-## 🗂️ Estructura del Proyecto
+## 🏗️ Estructura del Proyecto
 
 ```
-SEMANA 2 - NAVEGACION REACT NATIVE/
-├── README.md                       # Este archivo
-├── SETUP-INICIAL.md               # Guía de configuración
-├── COMANDOS-UTILES.md             # Comandos frecuentes
-│
-├── practica-1-blog-app/           # Stack Navigator
-│   ├── README.md                  # Guía específica
-│   ├── package.json
-│   ├── App.tsx
-│   ├── src/
-│   │   ├── types/                 # Tipos TypeScript
-│   │   ├── screens/              # Pantallas principales
-│   │   └── components/           # Componentes reutilizables
-│   └── assets/
-│
-├── practica-2-dashboard-app/      # Tab Navigator
-│   ├── README.md
-│   ├── package.json
-│   ├── App.tsx
-│   ├── src/
-│   │   ├── types/
-│   │   ├── screens/
-│   │   └── components/
-│   └── assets/
-│
-└── practica-3-settings-app/       # Drawer Navigator
-    ├── README.md
-    ├── package.json
-    ├── App.tsx
-    ├── src/
-    │   ├── types/
-    │   ├── screens/
-    │   └── components/
-    └── assets/
+practica-3-settings-app/
+├── App.tsx                           # Componente principal con NavigationContainer
+├── src/
+│   ├── data/
+│   │   └── userData.ts              # Datos del usuario para el drawer
+│   ├── navigation/
+│   │   ├── types.ts                 # Tipos TypeScript para navegación
+│   │   ├── DrawerNavigator.tsx      # Configuración del Drawer Navigator
+│   │   └── MainStack.tsx           # Stack Navigator anidado
+│   ├── screens/
+│   │   ├── HomeScreen.tsx          # Dashboard principal
+│   │   ├── SettingsScreen.tsx      # Pantalla de configuración
+│   │   ├── AboutScreen.tsx         # Información de la aplicación
+│   │   └── HelpScreen.tsx          # Centro de ayuda
+│   └── components/
+│       └── CustomDrawer.tsx        # Custom drawer content
+├── package.json
+├── tsconfig.json
+├── babel.config.js
+└── README.md
 ```
 
-## 🚀 Cómo Empezar
+## 🚀 Instalación y Configuración
 
-### 1. Configuración Inicial
-```bash
-cd "SEMANA 2 - NAVEGACION REACT NATIVE"
-```
-
-### 2. Práctica 1 - Blog App (Stack Navigator)
-```bash
-cd practica-1-blog-app
-npm install
-npm start
-```
-
-### 3. Práctica 2 - Dashboard App (Tab Navigator)  
-```bash
-cd practica-2-dashboard-app
-npm install
-npm start
-```
-
-### 4. Práctica 3 - Settings App (Drawer Navigator)
+### 1. Instalar Dependencias
 ```bash
 cd practica-3-settings-app
-npm install  
-npm start
+pnpm install
 ```
 
-## 📊 Sistema de Evaluación
+### 2. Dependencias Incluidas
+```json
+{
+  "dependencies": {
+    "@expo/vector-icons": "^15.0.3",
+    "@react-navigation/drawer": "^7.6.0",
+    "@react-navigation/native": "^7.1.18",
+    "@react-navigation/native-stack": "^7.5.1",
+    "expo": "~54.0.19",
+    "react": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-safe-area-context": "^5.6.1",
+    "react-native-screens": "^4.16.0"
+  }
+}
+```
 
-### Por Práctica:
-- Cada práctica vale **100 puntos**
-- Se evalúan múltiples criterios
-- Hay checkboxes de verificación
+### 3. Ejecutar la Aplicación
+```bash
+pnpm start
+```
 
-### Calificación General:
-- **Práctica 1:** 33.33% (Stack Navigator)
-- **Práctica 2:** 33.33% (Tab Navigator)  
-- **Práctica 3:** 33.34% (Drawer Navigator)
-- **Total:** 100% de la nota de prácticas
+## 📱 Pantallas y Funcionalidades
 
-### Escala:
-- **90-100:** ⭐⭐⭐⭐⭐ Excelente
-- **80-89:** ⭐⭐⭐⭐ Muy Bueno
-- **70-79:** ⭐⭐⭐ Bueno
-- **60-69:** ⭐⭐ Suficiente
-- **0-59:** ⭐ Insuficiente
+### 🏠 HomeScreen (Dashboard)
+- **Tarjetas Interactivas** que navegan a pantalla de detalles
+- **Diseño tipo Dashboard** con información resumida
+- **Navegación Stack** para ver detalles de elementos
+- **Estilo Profesional** con tarjetas elevadas
+
+### ⚙️ SettingsScreen (Configuración)
+- **Switches Funcionales** para notificaciones, modo oscuro, etc.
+- **Secciones Organizadas** (General, Cuenta, Zona de Peligro)
+- **Opciones de Cuenta** como cambiar contraseña y privacidad
+- **Interfaz Nativa** usando Switch de React Native
+
+### ℹ️ AboutScreen (Acerca de)
+- **Información de la App** con versión y descripción
+- **Tecnologías Utilizadas** con lista detallada
+- **Diseño Elegante** con iconos y secciones claras
+- **Footer Informativo** con datos del desarrollador
+
+### 🆘 HelpScreen (Ayuda)
+- **Preguntas Frecuentes** expandibles
+- **Centro de Soporte** con opciones de contacto
+- **Guías de Usuario** organizadas por categorías
+- **Interfaz Intuitiva** para encontrar ayuda rápidamente
+
+### 🎨 CustomDrawer (Drawer Personalizado)
+- **Perfil de Usuario** con foto y datos personales
+- **Navegación Principal** integrada con DrawerItemList
+- **Opciones Adicionales** como Favoritos, Historial, Compartir
+- **Botón de Logout** con confirmación de Alert
+
+## 🔧 Configuración Técnica
+
+### TypeScript Types
+```typescript
+// Tipos para el Drawer Navigator
+export type DrawerParamList = {
+  MainStack: undefined;
+  Settings: undefined;
+  About: undefined;
+  Help: undefined;
+};
+
+// Tipos para el Stack Navigator anidado
+export type MainStackParamList = {
+  Home: undefined;
+  Details: { itemId: string };
+};
+```
+
+### Navegación Anidada
+```typescript
+// Drawer Navigator principal
+const Drawer = createDrawerNavigator<DrawerParamList>();
+
+// Stack Navigator anidado dentro del Drawer
+const Stack = createNativeStackNavigator<MainStackParamList>();
+```
+
+### Custom Drawer Content
+```typescript
+// Drawer personalizado con perfil de usuario
+const CustomDrawer = (props: DrawerContentComponentProps) => {
+  return (
+    <DrawerContentScrollView {...props}>
+      {/* Perfil de usuario */}
+      <View style={styles.profileSection}>
+        <Image source={{ uri: CURRENT_USER.avatar }} style={styles.avatar} />
+        <Text style={styles.userName}>{CURRENT_USER.name}</Text>
+        <Text style={styles.userEmail}>{CURRENT_USER.email}</Text>
+      </View>
+      
+      {/* Navegación principal */}
+      <DrawerItemList {...props} />
+      
+      {/* Opciones adicionales y logout */}
+    </DrawerContentScrollView>
+  );
+};
+```
+
+## ✅ Checklist de Verificación
+
+### 🏗️ Estructura Base:
+- [ ] Drawer Navigator configurado correctamente
+- [ ] Stack Navigator anidado funcionando
+- [ ] Custom Drawer Content implementado
+- [ ] Tipos TypeScript definidos
+- [ ] 4 pantallas principales creadas
+
+### 🎨 Interfaz de Usuario:
+- [ ] Perfil de usuario en el drawer
+- [ ] Iconos Ionicons en todas las secciones
+- [ ] Diseño profesional con StyleSheet
+- [ ] Navegación fluida entre pantallas
+- [ ] Responsividad en diferentes tamaños
+
+### ⚡ Funcionalidades:
+- [ ] Dashboard con tarjetas interactivas
+- [ ] Switches funcionales en Settings
+- [ ] Información completa en About
+- [ ] Centro de ayuda organizado
+- [ ] Logout con confirmación Alert
+
+### 🔧 Aspectos Técnicos:
+- [ ] No errores de TypeScript
+- [ ] Navegación tipada funcionando
+- [ ] Imports correctos de dependencias
+- [ ] Manejo de estado con useState
+- [ ] Estructura de archivos organizada
 
 ## 🎨 Mejoras Opcionales
 
-Cada práctica incluye 3 niveles de mejoras:
+### 🟢 Nivel 1 (Fácil - 5 pts extra):
+- [ ] Cambiar colores del tema
+- [ ] Agregar más opciones en Settings
+- [ ] Personalizar iconos del drawer
+- [ ] Añadir más preguntas en Help
+- [ ] Cambiar foto de perfil del usuario
 
-- 🟢 **Nivel 1 (Fácil):** Cambios visuales básicos, agregar más datos, modificar estilos
-- 🟡 **Nivel 2 (Medio):** Nuevas funcionalidades, integración de APIs, optimizaciones
-- 🔴 **Nivel 3 (Avanzado):** Características complejas, animaciones personalizadas, arquitectura avanzada
+### 🟡 Nivel 2 (Medio - 10 pts extra):
+- [ ] Implementar tema oscuro funcional
+- [ ] Agregar animaciones de transición
+- [ ] Crear pantalla de perfil detallada
+- [ ] Implementar búsqueda en Help
+- [ ] Agregar notificaciones push simuladas
 
-💡 **Tip:** Completa las mejoras opcionales para obtener puntos extra y profundizar tu aprendizaje.
+### 🔴 Nivel 3 (Avanzado - 15 pts extra):
+- [ ] Integrar Context API para estado global
+- [ ] Implementar persistencia con AsyncStorage
+- [ ] Crear sistema de autenticación
+- [ ] Agregar animaciones personalizadas
+- [ ] Implementar i18n (internacionalización)
 
-## 🎓 Metodología
+## � Problemas Comunes y Soluciones
 
-### Estructura de Cada Práctica:
-1. 🎯 Objetivos de aprendizaje
-2. 📋 Requisitos previos  
-3. 🏗️ Estructura del proyecto
-4. 📝 Setup inicial
-5. 📝 Tipos TypeScript
-6. 📝 Implementación paso a paso
-7. ✅ Checklist de verificación
-8. 🎨 Mejoras opcionales
-9. 🐛 Problemas comunes y soluciones
-10. 🎯 Criterios de evaluación
-
-### Código con Documentación:
-```tsx
-/**
- * ComponentName - Descripción breve
- *
- * ¿Qué hace?
- * Explicación de la funcionalidad
- *
- * ¿Para qué?
- * Propósito y beneficios
- *
- * ¿Cómo funciona?
- * Pasos del proceso (cuando aplique)
- */
+### ❌ Error: "react-native-reanimated not found"
+```bash
+# Solución: No instalar reanimated para esta práctica
+# Ya está configurado sin esta dependencia
 ```
 
-## 🤝 Soporte
+### ❌ Error: "Cannot resolve @expo/vector-icons"
+```bash
+# Solución: Verificar instalación
+pnpm install @expo/vector-icons
+```
 
-- **En Clase:** Haz preguntas durante la implementación
-- **En Casa:** Consulta el troubleshooting de cada práctica
-- **Dudas:** Revisa la documentación oficial de React Navigation
+### ❌ Error: TypeScript "Property does not exist"
+```bash
+# Solución: Verificar tipos en src/navigation/types.ts
+# Asegurar que los nombres coincidan exactamente
+```
+
+### ❌ Error: "Drawer not opening"
+```bash
+# Solución: Verificar que react-native-screens esté instalado
+pnpm install react-native-screens react-native-safe-area-context
+```
+
+## 🎯 Criterios de Evaluación
+
+### Funcionalidad (40 puntos):
+- Drawer Navigator funciona correctamente (10 pts)
+- Custom Drawer Content implementado (10 pts)
+- Navegación Stack anidada (10 pts)
+- Todas las pantallas operativas (10 pts)
+
+### Diseño y UX (30 puntos):
+- Interfaz profesional y consistente (10 pts)
+- Iconos apropiados y estética (10 pts)
+- Navegación intuitiva y fluida (10 pts)
+
+### Código y Estructura (30 puntos):
+- Código limpio y organizado (10 pts)
+- TypeScript correctamente tipado (10 pts)
+- Estructura de archivos lógica (10 pts)
+
+### Total: 100 puntos + mejoras opcionales
 
 ---
 
-**¡Vamos a dominar la navegación en React Native! 🚀**
+## 🤝 Soporte y Recursos
+
+- **React Navigation Docs:** [Drawer Navigator](https://reactnavigation.org/docs/drawer-navigator/)
+- **Expo Vector Icons:** [Ionicons Directory](https://icons.expo.fyi/)
+- **TypeScript:** [React Navigation Types](https://reactnavigation.org/docs/typescript/)
+
+**¡Excelente trabajo completando la Práctica 3! 🎉**
