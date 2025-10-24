@@ -1,20 +1,31 @@
-# � Práctica 3: Settings App con Drawer Navigator
+# 📱 Práctica 3: Settings App con Drawer Navigator
 
-Aplicación de configuración usando **Drawer Navigator** con custom drawer content, navegación anidada y diseño profesional.
+**👤 Autor:** Miguel Lopez  
+**📅 Fecha:** 23 de octubre de 2025  
+**📚 Curso:** Semana 2 - Navegación React Native
 
-## 🎯 Objetivos de Aprendizaje
+## 🎯 Objetivo
+Crear una aplicación de configuración profesional que demuestre el uso de **Drawer Navigator** con custom drawer content, navegación anidada, perfil de usuario y funcionalidades avanzadas.
 
-Al completar esta práctica, dominarás:
+## �️ Arquitectura de Navegación
 
-- ✅ **Drawer Navigator** básico y configuración
-- ✅ **Custom Drawer Content** con perfil de usuario
-- ✅ **Navegación Anidada** (Stack dentro de Drawer)
-- ✅ **Iconos con Ionicons** de Expo Vector Icons
-- ✅ **TypeScript** para navegación tipada
-- ✅ **Funcionalidad de Logout** con confirmación
-- ✅ **Pantallas de configuración** profesionales
+```
+DrawerNavigator (Principal)
+├── MainStack → HomeStack
+│   ├── HomeScreen (Dashboard)
+│   └── DetailsScreen (Navegación anidada)
+├── Settings → SettingsScreen (Configuración avanzada)
+├── About → AboutScreen (Información de la app)
+└── Help → HelpScreen (Centro de ayuda)
 
-## � Características Implementadas
+CustomDrawerContent:
+├── Perfil de Usuario (Avatar, nombre, email)
+├── Navegación Principal (DrawerItemList)
+├── Opciones Adicionales (Favoritos, Historial, Compartir)
+└── Logout (Con confirmación Alert)
+```
+
+## 🚀 Características Implementadas
 
 ### 🎨 Interfaz de Usuario:
 - **Custom Drawer** con foto de perfil y datos del usuario
@@ -37,7 +48,7 @@ Al completar esta práctica, dominarás:
 - **Expo Vector Icons** para iconografía
 - **Gestión de Estado** con useState
 
-## 🏗️ Estructura del Proyecto
+## 📁 Estructura del Proyecto
 
 ```
 practica-3-settings-app/
@@ -62,7 +73,51 @@ practica-3-settings-app/
 └── README.md
 ```
 
-## 🚀 Instalación y Configuración
+## � Tecnologías Utilizadas
+
+- **React Native**: 0.81.5
+- **Expo**: 54.0.19
+- **React Navigation v6**:
+  - `@react-navigation/native`
+  - `@react-navigation/drawer`
+  - `@react-navigation/native-stack`
+- **TypeScript**: Tipado estricto para navegación segura
+- **Expo Vector Icons**: Íconos Ionicons para drawer y pantallas
+- **pnpm**: Gestor de paquetes eficiente
+
+## 🎨 Características de UI/UX
+
+### 🏠 HomeScreen (Dashboard)
+- **Tarjetas interactivas**: Navegación a pantalla de detalles con parámetros
+- **Diseño tipo dashboard**: Cards con información organizada
+- **Tip del día**: Sección informativa con consejos
+- **Navegación Stack**: Flujo hacia DetailsScreen
+
+### ⚙️ SettingsScreen (Configuración)
+- **Switches funcionales**: Notificaciones, modo oscuro, auto-update
+- **Secciones organizadas**: General, Cuenta, Zona de Peligro
+- **Opciones de cuenta**: Cambiar contraseña, privacidad
+- **Interfaz nativa**: Uso de Switch de React Native
+
+### ℹ️ AboutScreen (Información)
+- **Detalles de la app**: Versión, descripción, propósito
+- **Tecnologías utilizadas**: Lista detallada del stack técnico
+- **Diseño elegante**: Iconos y secciones bien organizadas
+- **Footer informativo**: Datos del desarrollador
+
+### 🆘 HelpScreen (Centro de Ayuda)
+- **Preguntas frecuentes**: FAQs organizadas por categorías
+- **Centro de soporte**: Opciones de contacto y ayuda
+- **Guías de usuario**: Información de uso de la aplicación
+- **Navegación intuitiva**: Acceso fácil a información de ayuda
+
+### 🎨 CustomDrawer (Drawer Personalizado)
+- **Perfil de usuario**: Avatar, foto, nombre, email y rol
+- **Navegación principal**: Integración con DrawerItemList
+- **Opciones adicionales**: Favoritos, Historial, Compartir
+- **Logout seguro**: Confirmación con Alert antes de cerrar sesión
+
+## �🚀 Instalación y Configuración
 
 ### 1. Instalar Dependencias
 ```bash
