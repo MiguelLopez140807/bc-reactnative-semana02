@@ -66,7 +66,7 @@ practica-1-blog-app/
 │   ├── data/
 │   │   └── posts.ts              # Datos de ejemplo y utilidades
 │   └── components/                # (Para futuras extensiones)
-├── screenshots/                   # Capturas de pantalla
+├── screenshots/                   # Capturas de pantalla (practica-1-blog-app/screenshots/)
 └── assets/                       # Recursos estáticos
 ```
 
@@ -85,15 +85,15 @@ PostListScreen (Vuelve a lista)
 ## 📱 Capturas de Pantalla
 
 ### Pantalla Principal - Lista de Posts
-![Lista de Posts](screenshots/practica_1.1.jpg)
+![Lista de Posts](practica-1-blog-app/screenshots/practica_1.1.jpg)
 *Lista principal mostrando todos los artículos disponibles con categorías y metadatos*
 
 ### Detalle del Artículo
-![Detalle del Post](screenshots/practica_1.2.jpg)
+![Detalle del Post](practica-1-blog-app/screenshots/practica_1.2.jpg)
 *Vista completa del artículo con contenido, autor y acciones*
 
 ### Crear Nuevo Post
-![Crear Post](screenshots/practica_1.3.jpg)
+![Crear Post](practica-1-blog-app/screenshots/practica_1.3.jpg)
 *Formulario para crear nuevos artículos con validación*
 
 ## 🎨 Características del Diseño
